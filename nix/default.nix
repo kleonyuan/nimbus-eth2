@@ -78,7 +78,7 @@ in stdenv.mkDerivation rec {
 
   installPhase = ''
     mkdir -p $out/bin
-    rm -f build/generate_makefile
+    rm -fr build/generate_makefile build/*.dSYM
     cp build/* $out/bin
     for tool in ncli ncli_db; do
       if [ -e "$out/bin/$tool" ]; then
